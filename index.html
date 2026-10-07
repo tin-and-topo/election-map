@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A quick, accessible guide to sample voting district information.">
+    <!-- GitHub Pages cannot set HTTP headers. Keep this in sync with host-level headers if hosting moves. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-ancestors 'none'; img-src 'self' data:; script-src 'self'; style-src 'self'; connect-src 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+    <meta name="color-scheme" content="light">
+    <title>VoteReady | District information</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to district information</a>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="VoteReady home">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span>VoteReady</span>
+      </a>
+      <p class="header-note">Election information, made clear.</p>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">Sample voter guide</p>
+        <h1 id="page-title">Find your district’s voting information.</h1>
+        <p class="hero-copy">Choose a district on the map or from the list to see polling locations, sample ballot details, and voter resources.</p>
+        <p class="data-notice"><strong>Demo data only.</strong> Do not use this site to make voting decisions until it has been connected to official election-authority data.</p>
+      </section>
+
+      <section class="district-picker" aria-labelledby="district-picker-title">
+        <div>
+          <p class="eyebrow">Step 1</p>
+          <h2 id="district-picker-title">Select a voting district</h2>
+        </div>
+        <label class="select-control" for="district-select">
+          <span class="sr-only">Voting district</span>
+          <select id="district-select" name="district">
+            <option value="north">North District</option>
+            <option value="east">East District</option>
+            <option value="south">South District</option>
+            <option value="west">West District</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="app-layout" aria-label="Voting district map and information">
+        <div class="map-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Step 2</p>
+              <h2>Choose on the map</h2>
+            </div>
+            <span class="map-key"><span aria-hidden="true"></span>Selected district</span>
+          </div>
+          <p id="map-instructions" class="map-instructions">This is an illustrative district diagram. Select a labeled area to update the information panel.</p>
+          <div class="district-map" role="group" aria-describedby="map-instructions" aria-label="Illustrative voting district map">
+            <button class="district district-north" type="button" data-district="north" aria-pressed="true"><span>North</span><small>District 1</small></button>
+            <button class="district district-east" type="button" data-district="east" aria-pressed="false"><span>East</span><small>District 2</small></button>
+            <button class="district district-south" type="button" data-district="south" aria-pressed="false"><span>South</span><small>District 3</small></button>
+            <button class="district district-west" type="button" data-district="west" aria-pressed="false"><span>West</span><small>District 4</small></button>
+            <span class="map-center" aria-hidden="true">Civic<br>Center</span>
+          </div>
+          <p class="map-caption">Map boundaries shown here are placeholders, not official jurisdiction boundaries.</p>
+        </div>
+
+        <aside class="district-summary" aria-labelledby="district-name">
+          <p class="eyebrow">Your selection</p>
+          <h2 id="district-name" tabindex="-1">North District</h2>
+          <p id="district-description">Illustrative district information for demonstration purposes.</p>
+          <dl class="quick-facts">
+            <div><dt>Election</dt><dd id="election-name">Sample municipal election</dd></div>
+            <div><dt>Election day</dt><dd id="election-date">To be confirmed</dd></div>
+            <div><dt>Registration</dt><dd id="registration-date">Check with election office</dd></div>
+          </dl>
+          <a class="text-link" href="#voting-information">View district details <span aria-hidden="true">↓</span></a>
+        </aside>
+      </section>
+
+      <section id="voting-information" class="information-grid" aria-label="District voting information">
+        <article class="info-card locations-card">
+          <div class="card-heading">
+            <div class="card-icon" aria-hidden="true">⌖</div>
+            <div><p class="eyebrow">Vote in person</p><h2>Polling locations</h2></div>
+          </div>
+          <p id="polling-note" class="muted"></p>
+          <ul id="locations-list" class="location-list"></ul>
+        </article>
+
+        <article class="info-card ballot-card">
+          <div class="card-heading">
+            <div class="card-icon" aria-hidden="true">▤</div>
+            <div><p class="eyebrow">Know before you go</p><h2>Sample ballot</h2></div>
+          </div>
+          <p id="ballot-note" class="muted"></p>
+          <div id="ballot-list" class="ballot-list"></div>
+        </article>
+
+        <article class="info-card issues-card">
+          <div class="card-heading">
+            <div class="card-icon" aria-hidden="true">?</div>
+            <div><p class="eyebrow">On this ballot</p><h2>Issues &amp; questions</h2></div>
+          </div>
+          <ul id="issues-list" class="issues-list"></ul>
+        </article>
+
+        <article class="info-card resources-card">
+          <div class="card-heading">
+            <div class="card-icon" aria-hidden="true">i</div>
+            <div><p class="eyebrow">Plan your vote</p><h2>Voter resources</h2></div>
+          </div>
+          <ul id="resources-list" class="resource-list"></ul>
+        </article>
+      </section>
+
+      <section class="verify-section" aria-labelledby="verify-title">
+        <div>
+          <p class="eyebrow">Always verify</p>
+          <h2 id="verify-title">Confirm election details with your local election authority.</h2>
+          <p>Polling locations, ballot content, and deadlines can change. This public site is intended to make official information easier to browse, never to replace it.</p>
+        </div>
+        <a class="button-link" href="https://www.usa.gov/election-office" rel="noreferrer">Find an election office <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>VoteReady is a public information interface. It does not ask for, retain, or share personal voter data.</p>
+      <a href="privacy.html">Security and privacy</a>
+    </footer>
+    <div id="selection-status" class="sr-only" aria-live="polite"></div>
+    <script src="assets/js/election-data.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>
