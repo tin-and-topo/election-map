@@ -1,4 +1,4 @@
-# [Project Title Here]
+# VoteReady Election Map
 
 **tin+topo**
 
@@ -6,9 +6,38 @@
 [![Geopandas](https://img.shields.io/badge/Geopandas-Active-success.svg)](https://geopandas.org/)
 [![AGOL](https://img.shields.io/badge/ArcGIS_Online-Ready-orange.svg)](https://www.arcgis.com/)
 
-> **Briefly describe the purpose of this project here.** What spatial problem does this solve? Who is the end user? What data does it produce?
+> A static, accessible voter-information map that lets people select a district and quickly review polling locations, sample ballot content, ballot questions, and voting resources. The current interface intentionally uses sample data only.
 
 ---
+
+## Current Application
+
+The GitHub Pages application is dependency-free and lives at the repository root:
+
+```text
+├── index.html                 # Accessible application shell
+├── assets/css/styles.css      # Responsive interface styles
+├── assets/js/election-data.js # Clearly labeled sample data; replace with official data
+└── assets/js/app.js           # District selection and safe DOM rendering
+```
+
+The app does not collect, transmit, or persist user data. District selection is kept only in the page URL fragment so a view can be shared without contacting a server.
+
+### Publish with GitHub Pages
+
+1. Push the repository to its intended public GitHub repository.
+2. In **Settings → Pages**, choose **Deploy from a branch**.
+3. Select the publishing branch (normally `main`) and the `/(root)` folder.
+4. Before treating the website as voter-facing, replace every sample district, polling-place, contest, and ballot-question record in `assets/js/election-data.js` with reviewed data from the responsible election authority.
+
+GitHub Pages is appropriate for this public, static guide. It must not be used to store voter lookups, registration records, addresses, credentials, or service secrets. Any future personalized lookup needs a separately hosted backend with an approved privacy review.
+
+## Data publishing requirements
+
+- Obtain data from the responsible election authority and record its source and effective date.
+- Have two people review polling locations, deadlines, and ballot text before publishing.
+- Preserve source data outside this public repository when it contains restricted or personally identifying information.
+- Do not describe sample data as official, or infer a voter’s district from their address in the browser.
 
 ## Repository Structure
 
