@@ -47,16 +47,12 @@ h3 { font-size: 1rem; }
 .map-key span { display: inline-block; width: .75rem; height: .75rem; border-radius: 50%; background: var(--green); }
 .map-instructions, .map-caption, .muted { color: var(--muted); font-size: .86rem; }
 .district-map { display: grid; grid-template-columns: 1fr 1.05fr; grid-template-rows: 142px 142px; gap: .45rem; position: relative; min-height: 290px; margin-top: 1.2rem; padding: .45rem; border-radius: .6rem; background: #edf4f0; }
+.site-selector { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 110px); min-height: 232px; }
 .district { display: flex; position: relative; flex-direction: column; justify-content: center; align-items: center; border: 2px solid #bad0c5; background: #d4ebe0; color: #25483c; cursor: pointer; transition: transform .15s ease, background .15s ease, box-shadow .15s ease; }
 .district:hover { transform: translateY(-2px); background: #c7e6d7; box-shadow: 0 4px 12px rgba(0, 75, 58, .12); }
 .district[aria-pressed="true"] { z-index: 1; border-color: var(--green-dark); background: var(--green); color: white; box-shadow: 0 5px 15px rgba(0, 75, 58, .25); }
 .district span { font-size: 1.1rem; font-weight: 800; }
 .district small { opacity: .85; }
-.district-north { border-radius: .55rem .3rem .3rem .3rem; clip-path: polygon(0 5%, 100% 0, 88% 100%, 3% 92%); }
-.district-east { border-radius: .3rem .55rem .3rem .3rem; clip-path: polygon(6% 3%, 100% 12%, 94% 92%, 0 100%); }
-.district-south { border-radius: .3rem .3rem .55rem .3rem; clip-path: polygon(3% 0, 92% 6%, 100% 96%, 0 100%); }
-.district-west { border-radius: .3rem .3rem .3rem .55rem; clip-path: polygon(0 8%, 93% 0, 100% 88%, 8% 100%); }
-.map-center { position: absolute; top: 50%; left: 50%; z-index: 2; width: 66px; height: 66px; display: grid; place-items: center; border: 3px solid white; border-radius: 50%; background: var(--gold); color: #46360d; font-size: .7rem; font-weight: 800; line-height: 1.1; text-align: center; transform: translate(-50%, -50%); }
 .map-caption { margin: .8rem 0 0; }
 .district-summary { padding: 1.65rem; background: var(--green-dark); border-color: var(--green-dark); color: white; }
 .district-summary .eyebrow { color: #a8e6cb; }
@@ -84,6 +80,7 @@ h3 { font-size: 1rem; }
 .issues-list, .resource-list { display: grid; gap: .75rem; margin: 0; }
 .issue, .resource { position: relative; padding-left: 1.25rem; }
 .issue::before, .resource::before { position: absolute; left: 0; color: var(--green); font-weight: 900; content: "→"; }
+.resource-link { color: var(--green-dark); font-weight: 700; text-underline-offset: .18em; }
 .verify-section { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin: 0 0 4.5rem; padding: 2rem; border-radius: .8rem; background: #dff1eb; }
 .verify-section h2 { max-width: 570px; font-size: 1.75rem; }
 .verify-section p:not(.eyebrow) { max-width: 640px; margin-bottom: 0; color: #31594d; }
@@ -111,4 +108,5 @@ h3 { font-size: 1rem; }
   .site-header, main, .site-footer { padding-left: 1rem; padding-right: 1rem; }
   .map-panel, .district-summary, .info-card { padding: 1.1rem; }
   .district-map { grid-template-rows: 115px 115px; min-height: 236px; }
+  .site-selector { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 95px); min-height: 300px; }
 }
