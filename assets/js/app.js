@@ -48,7 +48,16 @@
     var list = document.getElementById(id);
     list.replaceChildren();
     values.forEach(function (value) {
-      list.append(makeElement("li", className, value));
+      var item = makeElement("li", className);
+      if (typeof value === "string") {
+        item.textContent = value;
+      } else {
+        var link = makeElement("a", "resource-link", value.label);
+        link.href = value.url;
+        link.rel = "noreferrer";
+        item.append(link);
+      }
+      list.append(item);
     });
   }
 
@@ -66,7 +75,7 @@
     setText("district-description", district.description);
     setText("election-name", district.election);
     setText("election-date", district.date);
-    setText("registration-date", district.registration);
+    setText("registration-date", district.earlyVoting);
     setText("polling-note", district.pollingNote);
     setText("ballot-note", district.ballotNote);
     renderLocations(district.locations);
