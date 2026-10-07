@@ -6,7 +6,7 @@
 [![Geopandas](https://img.shields.io/badge/Geopandas-Active-success.svg)](https://geopandas.org/)
 [![AGOL](https://img.shields.io/badge/ArcGIS_Online-Ready-orange.svg)](https://www.arcgis.com/)
 
-> A static, accessible voter-information map that lets people select a district and quickly review polling locations, sample ballot content, ballot questions, and voting resources. The current interface intentionally uses sample data only.
+> A static, accessible voter-information guide that lets people explore polling locations, sample ballot content, ballot questions, and voting resources. The initial published-data scope is Hamilton County, Tennessee’s November 3, 2026 State and Federal General Election.
 
 ---
 
@@ -17,27 +17,27 @@ The GitHub Pages application is dependency-free and lives at the repository root
 ```text
 ├── index.html                 # Accessible application shell
 ├── assets/css/styles.css      # Responsive interface styles
-├── assets/js/election-data.js # Clearly labeled sample data; replace with official data
-└── assets/js/app.js           # District selection and safe DOM rendering
+├── assets/js/election-data.js # Reviewed Hamilton County snapshot and official source links
+└── assets/js/app.js           # Site selection and safe DOM rendering
 ```
 
-The app does not collect, transmit, or persist user data. District selection is kept only in the page URL fragment so a view can be shared without contacting a server.
+The app does not collect, transmit, or persist user data. Site selection is kept only in the page URL fragment so a view can be shared without contacting a server.
 
 ### Publish with GitHub Pages
 
 1. Push the repository to its intended public GitHub repository.
 2. In **Settings → Pages**, choose **Deploy from a branch**.
 3. Select the publishing branch (normally `main`) and the `/(root)` folder.
-4. Before treating the website as voter-facing, replace every sample district, polling-place, contest, and ballot-question record in `assets/js/election-data.js` with reviewed data from the responsible election authority.
+4. Before each new publication, review `assets/js/election-data.js` against the linked sources and update its retrieval date. Election data can change at any time.
 
 GitHub Pages is appropriate for this public, static guide. It must not be used to store voter lookups, registration records, addresses, credentials, or service secrets. Any future personalized lookup needs a separately hosted backend with an approved privacy review.
 
 ## Data publishing requirements
 
-- Obtain data from the responsible election authority and record its source and effective date.
+- Obtain data from the responsible election authority and record its source and retrieval date. The current Hamilton County source pages are the [Notice of Election](https://elect.hamiltontn.gov/NovNoE.aspx), [early-voting locations](https://elect.hamiltontn.gov/ev.aspx), [Election Day polling places](https://elect.hamiltontn.gov/ed.aspx), and [official generic sample ballot](https://elect.hamiltontn.gov/Portals/12/HTML/GenSample.html).
 - Have two people review polling locations, deadlines, and ballot text before publishing.
 - Preserve source data outside this public repository when it contains restricted or personally identifying information.
-- Do not describe sample data as official, or infer a voter’s district from their address in the browser.
+- Do not infer a voter’s district from their address in the browser. Direct personalized lookups to the responsible election authority.
 
 ## Repository Structure
 
