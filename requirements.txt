@@ -13,7 +13,7 @@ geopandas==0.14.4
 matplotlib==3.8.4
 seaborn==0.13.2
 folium==0.17.0
-pyogrio==0.8.0
+pyogrio==0.13.0
 
 # ESRI & ArcGIS Online
 arcgis==2.2.0.4
